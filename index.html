@@ -6,7 +6,10 @@
   <button onclick="Puck.write('LED1.set();\n');">LED On!</button>
   <button onclick="Puck.write('LED1.reset();\n');">LED Off!</button>
   <script>
-   Puck.eval("BTN.read()",function(x) { console.log(x); })
+   Puck.eval("BTN.read()",function(x) { 
+    console.log("clicked"); 
+    console.log(x); 
+   })
   </script>
  </body>
 </html>
