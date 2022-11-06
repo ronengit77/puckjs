@@ -7,5 +7,16 @@
   <p>&nbsp;</p>
   <button onclick="Puck.write('LED3.set();\n');">LED On!</button>
   <button onclick="Puck.write('LED3.reset();\n');">LED Off!</button>
+  
+  <script>
+var presses = 0;
+NRF.setAdvertising({},{manufacturer: 0x0590, manufacturerData:[presses]});
+
+setWatch(function() {
+  presses++;
+  NRF.setAdvertising({},{manufacturer: 0x0590, manufacturerData:[presses]});
+}, BTN, {edge:"rising", repeat:1, debounce:20})
+</script>
+  
  </body>
 </html>
